@@ -60,6 +60,31 @@ public class Piekarz : Pracownik
     }
 }
 
+public class A
+{
+
+    public A()
+    {
+        Console.WriteLine("To jest konstruktor A");
+    }
+}
+
+public class B : A
+{
+
+    public B() : base() 
+    {
+        Console.WriteLine("To jest konstruktor B");
+    }
+}
+
+public class C : B
+{
+    public C() : base()
+    {
+        Console.WriteLine("To jest konstruktor C");
+    }
+}
 
 public class Program
 {
@@ -84,6 +109,10 @@ public class Program
         Piekarz janek = new Piekarz();
         janek.Pracuj();
 
+        //Pracownik p = new Pracownik(); // błąd kompilatora
+        A obiektA = new A();
+        B obiektB = new B();
+        C obiektC = new C();
     }
 
     public static void powiedz_cos(Zwierze zwierze)
